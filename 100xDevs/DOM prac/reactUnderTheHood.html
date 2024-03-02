@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+            let GlobalId =1;
+            let todoState=[];
+            let oldTodoState=[];
+
+            function addTodo(){
+                const title= document.getElementById("titile").value;
+                const description= document.getElementById("description").value;
+                todoState.push({
+                    title: title,
+                    description: description,
+                    id: GlobalId++
+                })
+                updateState(todoState);
+            }
+            function removeTodo(){
+                const element =document.getElementById(todo.id);
+                element.parent.removeChild(element);
+            }
+            function updateTodo(oldTodo, newTodo){
+                const element= document.getElementById(oldTodo.id);
+                element.children[0].innerHTML= newTodo.title;
+                element.children[1].innerHTML= newTodo.description;
+                element.children[2].innerHTML =newTodo.completed? "Mark as done": "Done";
+            }
+            function updateState(newTodos){
+                const added=[];
+                const deleted=[];
+                const updated=[];
+                oldTodoState=newTodos;
+            }
+        </script>
+
+    </head>
+</html>

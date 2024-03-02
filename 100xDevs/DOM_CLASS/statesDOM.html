@@ -1,0 +1,49 @@
+<html>
+  
+
+  <body>
+    <script>
+        function markAsDone(todoId) {
+      const parent = document.getElementById(todoId);
+      parent.children[2].innerHTML = "Done!";
+         }   
+        function createChild(title, description, id) {
+          const child = document.createElement("div");
+          const firstGrandChild = document.createElement("div");
+          firstGrandChild.innerHTML = title;
+          const secondGrandChild = document.createElement("div");
+          secondGrandChild.innerHTML = description;
+          const thirdGrandChild = document.createElement("button");
+          thirdGrandChild.innerHTML = "Mark as done";
+          thirdGrandChild.setAttribute("onclick", `markAsDone({$id})`);
+          child.appendChild(firstGrandChild);
+          child.appendChild(secondGrandChild);
+          child.appendChild(thirdGrandChild);
+          child.setAttribute("id", id);
+          return child;
+        }
+        function Dom_updater(state){
+            const parent = document.getElementById("todos");
+            parent.innerHTML ="";
+            for(let i=0;i<state.length;i++){
+                const child = createChild(state[i].title, state[i].description, state[i].id);
+                parent.appendChild(child);
+            }
+        }
+        Dom_updater([{
+        title : "Go to gym",
+        description: "Go to gym from 5-7",
+        id: 1
+    }]);
+      </script>
+    <input type="text" id="title" placeholder="Todo title" /><br /><br />
+    <input
+      type="text"
+      id="description"
+      placeholder="Todo description"
+    /><br /><br />
+    <button onclick="addTodo()">Add todo</button>
+    <div id="todos"></div>
+    
+  </body>
+</html>

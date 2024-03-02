@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript HTML DOM</h2>
+    <p>Finding Html elements by query selectors</p>
+    <div>Div one</div>
+    <p class="subheading"> Paragraph two</p>
+    <div>Yet another div</div>
+    <script>
+        var Paragraphs =document.querySelectorAll('p');
+        Paragraphs.forEach(para=> para.style.backgroundColor ="red")
+    </script>
+</body>
+</html>
