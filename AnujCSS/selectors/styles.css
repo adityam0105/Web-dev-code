@@ -1,0 +1,21 @@
+body {
+    font-size: 24px;
+}
+
+#first, #second{
+    color: red;
+}
+.purple{
+    color: purple;
+    font: monospace;
+}
+.highlight{
+    background-color: yellow;
+    font-style: italic;
+}
+#second>p{
+    color: green;
+}
+p:hover{
+    font-style: italic;
+}
